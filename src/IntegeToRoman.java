@@ -7,6 +7,12 @@ public class IntegeToRoman {
 		// TODO Auto-generated method stub
 		int num = 50;
 		System.out.println("Int to Roman: " + intToRoman(num));
+		int num1 = 501;
+		System.out.println("Int to Roman: " + intToRoman(num1));
+		int num2 = 3999;
+		System.out.println("Int to Roman: " + intToRoman(num2));
+		int num3 = 2134;
+		System.out.println("Int to Roman: " + intToRoman(num3));
 	}
 
 	public static String intToRoman(int num) {
