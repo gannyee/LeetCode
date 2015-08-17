@@ -41,7 +41,7 @@ public class FourSum {
 						taplet.add(nums[j]);
 						taplet.add(nums[left]);
 						taplet.add(nums[right]);
-						if(!result.contains(taplet)){
+						if(!elementSet.contains(taplet)){
 							result.add(taplet);
 							elementSet.add(taplet);
 						}
