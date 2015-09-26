@@ -1,3 +1,6 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class MergeKSortedLists {
 
 	/**
@@ -104,7 +107,7 @@ public class MergeKSortedLists {
 	}*/
 	
 	//Second Method:
-	public static ListNode mergerKSortedList(ListNode[] lists) {
+/*	public static ListNode mergerKSortedList(ListNode[] lists) {
 		if(lists.length == 0){
 			return null;
 		}
@@ -144,5 +147,44 @@ public class MergeKSortedLists {
 				fakeHead.next = p;
 			}
 			return head.next;
+		}*/
+	
+	//Method 3
+	public static ListNode mergerKSortedList(ListNode[] lists) {
+		//Special case
+		if(lists.length == 0){
+			return null;
 		}
+		
+		Comparator<ListNode> order = new Comparator<ListNode>() {
+
+			public int compare(ListNode o1, ListNode o2) {
+				// TODO Auto-generated method stub
+				return o1.getVal() - o2.getVal();
+			}
+		};
+		PriorityQueue<ListNode> p = new PriorityQueue<ListNode>(lists.length,order);
+		
+		//New queue in special order
+		for(ListNode list: lists){
+			p.add(list);
+		}
+		
+		ListNode head = new ListNode(-1);
+		ListNode q = head;
+		while(!p.isEmpty()){
+			//Retrieves and remove the head of queue 
+			ListNode item = p.poll();
+			q.next = item;
+			//Keep add the next node of item till item is null
+			if(item.next != null)
+				p.add(item.next);
+			
+			q =  q.next;
+		}
+		return head.next;
+		
+	}
+	
+	
 }
