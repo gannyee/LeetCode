@@ -13,7 +13,7 @@ public class RemoveDuplicatesFromSortedArray {
 		int[] nums2 = new int[]{1,1,1,1};
 		System.out.println("nums2: " + removeDuplicates(nums2));
 		System.out.println("---------------------");
-		int[] nums3 = new int[]{1,1,2,2,3,3,4,4,5,6,7,8,9,9};
+		int[] nums3 = new int[]{1,2,3,4,4,5,6,7,8,9};
 		System.out.println("nums3 " + removeDuplicates(nums3));
 	}
 	
@@ -29,6 +29,8 @@ public class RemoveDuplicatesFromSortedArray {
 		for(int i = 0;i < nums.length;i ++){
 			if(nums[i] != nums[count]){
 				nums[++count] = nums[i];
+				
+				System.out.println(Arrays.toString(nums) + " : " + count);
 			}
 		}
 		return count + 1;
