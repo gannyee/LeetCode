@@ -14,7 +14,7 @@ public class KSum {
 		int[] s = new int[]{-500,-490,-471,-456,-422,-412,-406,-398,-381,-361,-341,-332,-292,-288,-272,-236,-235,-227,-207,-203,-185,-119,-59,-13,4,5,46,72,82,91,92,130,130,140,145,159,187,207,211,226,239,260,262,282,290,352,377,378,386,405,409,430,445,478,481,498};
 		System.out.println(" A solution set is: ");
 		List<List<Integer>> listArray = new ArrayList<List<Integer>>();
-		listArray = kSum(s,-3213);
+		listArray = kSum(s,-32);
 		for (int i = 0; i < listArray.size(); i++) {
 			System.out.println(listArray.get(i));
 		}
@@ -24,7 +24,7 @@ public class KSum {
 
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		Arrays.sort(nums);
-		result = recursionRoutin(nums,0,4,0);
+		result = recursionRoutin(nums,0,3,target);
 		return result;
 	}
 	
